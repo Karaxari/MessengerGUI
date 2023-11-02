@@ -1,0 +1,7 @@
+C:\Users\Karak\source\repos\Messenger_GUI\Messenger_GUI\x64\Debug\Messenger_GUI.vcxproj.AssemblyReference.cache
+C:\Users\Karak\source\repos\Messenger_GUI\Messenger_GUI\x64\Debug\MessengerGUI.LoginForm.resources
+C:\Users\Karak\source\repos\Messenger_GUI\Messenger_GUI\x64\Debug\MessengerGUI.MessengerForm.resources
+C:\Users\Karak\source\repos\Messenger_GUI\Messenger_GUI\x64\Debug\MessengerGUI.MessengerFormAdmin.resources
+C:\Users\Karak\source\repos\Messenger_GUI\Messenger_GUI\x64\Debug\MessengerGUI.UserListForm.resources
+C:\Users\Karak\source\repos\Messenger_GUI\Messenger_GUI\x64\Debug\Messenger_GUI.vcxproj.GenerateResource.cache
+C:\Users\Karak\source\repos\Messenger_GUI\Messenger_GUI\x64\Debug\MessengerGUI.ListPrivateChatsForm.resources

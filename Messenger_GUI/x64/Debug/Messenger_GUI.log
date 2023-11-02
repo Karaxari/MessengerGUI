@@ -1,0 +1,11 @@
+﻿  Controller.cpp
+C:\Users\Karak\source\repos\Messenger_GUI\Messenger_GUI\MessangerUser.h(7,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+C:\Users\Karak\source\repos\Messenger_GUI\Messenger_GUI\MessengerForm.h(182,79): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\Karak\source\repos\Messenger_GUI\Messenger_GUI\MessengerForm.h(199,90): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\Karak\source\repos\Messenger_GUI\Messenger_GUI\MessengerForm.h(210,92): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\Karak\source\repos\Messenger_GUI\Messenger_GUI\MessengerForm.h(238,93): warning C4305: аргумент: усечение из "double" в "float"
+  MessengerFormAdmin.cpp
+C:\Users\Karak\source\repos\Messenger_GUI\Messenger_GUI\MessangerUser.h(7,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+  Создание кода...
+  ChatMessages.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  Messenger_GUI.vcxproj -> C:\Users\Karak\source\repos\Messenger_GUI\x64\Debug\Messenger_GUI.exe
