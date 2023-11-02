@@ -132,6 +132,7 @@
     <ClCompile Include="MessengerForm.cpp" />
     <ClCompile Include="MessengerFormAdmin.cpp" />
     <ClCompile Include="PrivateChat.cpp" />
+    <ClCompile Include="UserDelelteForm.cpp" />
     <ClCompile Include="UserListForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +154,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PrivateChat.h" />
+    <ClInclude Include="UserDelelteForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="UserListForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -169,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MessengerFormAdmin.resx">
       <DependentUpon>MessengerFormAdmin.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserDelelteForm.resx">
+      <DependentUpon>UserDelelteForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserListForm.resx">
       <DependentUpon>UserListForm.h</DependentUpon>

@@ -31,6 +31,7 @@ public:
 	std::string getPersonLogin();
 	std::list <std::string> getUsersList();
 	int getPrivateChatID(std::string login, std::string loginCompanion);
+	std::list<MessangerUser> selectAllUsers();
 
 	bool authentication(std::string login, std::string password);
 	bool authenticationAdmin(std::string login, std::string password);

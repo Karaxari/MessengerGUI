@@ -21,6 +21,12 @@ bool ConnectionDB::getStatus() {
     return _status;
 }
 
+bool ConnectionDB::deleteUsers(std::string userLogin) {
+
+    std::string sql = "DELETE FROM allUsers WHERE login = '" + userLogin + "'";
+    return creatingSQL_Query(sql);
+}
+
 void ConnectionDB::innitConnect() {
     // Выделяем дескриптор для базы данных
     if (SQL_SUCCESS != SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &sqlEnvHandle)) {

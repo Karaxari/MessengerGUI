@@ -2,6 +2,7 @@
 //#include "DataController.h"
 //#include <msclr\marshal_cppstd.h>
 #include "ListPrivateChatsForm.h"
+#include "UserDelelteForm.h"
 
 namespace MessengerGUI {
 
@@ -33,6 +34,7 @@ namespace MessengerGUI {
 			std::cout << login << " Constructor MessengerForm to String! \n";
 			ShowGeneralChat();
 			InitUserPrivateChat();
+			InitUserDeleteForm();
 			//
 			//TODO: добавьте код конструктора
 			//
@@ -60,6 +62,7 @@ namespace MessengerGUI {
 
 	public: DataController* dataController;
 	private: ListPrivateChatsForm^ listPrivateChats = gcnew ListPrivateChatsForm();
+	private: UserDelelteForm^ userDeleteFrom = gcnew UserDelelteForm();
 
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^ mainMenuToolStripMenuItem;
@@ -77,6 +80,7 @@ namespace MessengerGUI {
 	private: System::Windows::Forms::TextBox^ textBoxGeneralChat;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::TextBox^ textBoxPrivateChat;
+	private: System::Windows::Forms::Button^ buttonDeleteUser;
 
 	private:
 		/// <summary>
@@ -103,6 +107,7 @@ namespace MessengerGUI {
 			this->textBoxGeneralChat = (gcnew System::Windows::Forms::TextBox());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->textBoxPrivateChat = (gcnew System::Windows::Forms::TextBox());
+			this->buttonDeleteUser = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1->SuspendLayout();
 			this->flowLayoutPanel1->SuspendLayout();
 			this->flowLayoutPanel2->SuspendLayout();
@@ -149,6 +154,7 @@ namespace MessengerGUI {
 			this->flowLayoutPanel1->AutoSize = true;
 			this->flowLayoutPanel1->Controls->Add(this->buttonShowGeneralChat);
 			this->flowLayoutPanel1->Controls->Add(this->buttonSwowToPrivate);
+			this->flowLayoutPanel1->Controls->Add(this->buttonDeleteUser);
 			this->flowLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->flowLayoutPanel1->Location = System::Drawing::Point(0, 30);
 			this->flowLayoutPanel1->Margin = System::Windows::Forms::Padding(0);
@@ -242,6 +248,19 @@ namespace MessengerGUI {
 			this->textBoxPrivateChat->Size = System::Drawing::Size(446, 314);
 			this->textBoxPrivateChat->TabIndex = 1;
 			// 
+			// buttonDeleteUser
+			// 
+			this->buttonDeleteUser->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->buttonDeleteUser->Location = System::Drawing::Point(370, 25);
+			this->buttonDeleteUser->Margin = System::Windows::Forms::Padding(5, 25, 5, 10);
+			this->buttonDeleteUser->MinimumSize = System::Drawing::Size(150, 40);
+			this->buttonDeleteUser->Name = L"buttonDeleteUser";
+			this->buttonDeleteUser->Size = System::Drawing::Size(150, 40);
+			this->buttonDeleteUser->TabIndex = 5;
+			this->buttonDeleteUser->Text = L"Delete User";
+			this->buttonDeleteUser->Click += gcnew System::EventHandler(this, &MessengerFormAdmin::buttonDeleteUser_Click);
+			// 
 			// MessengerFormAdmin
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -282,6 +301,26 @@ namespace MessengerGUI {
 			//newButton->Click += gcnew System::EventHandler(this, &MessengerForm::CloseForm);
 
 			listPrivateChats->flowLayoutPrivateChat->Controls->Add(newButton);
+		}
+	}
+
+	private: void InitUserDeleteForm() {
+
+		std::list<MessangerUser> arrUsers = dataController->selectAllUsers();
+		for (MessangerUser user : arrUsers) {
+			std::cout << "User: " << user.getLogin() << '\n';
+			Button^ newButton = gcnew Button();
+			newButton->Name = gcnew System::String(user.getLogin().c_str());
+			newButton->Text = newButton->Name;
+			newButton->Size = System::Drawing::Size(200, 40);
+
+			newButton->Click += gcnew System::EventHandler(userDeleteFrom, &UserDelelteForm::DeleteUser);
+			//this.Controls.Add(b);
+
+			//newButton->Click += gcnew System::EventHandler(this, &ShowPrivateChat);
+			//newButton->Click += gcnew System::EventHandler(this, &MessengerForm::CloseForm);
+
+			userDeleteFrom->flowLayoutUserDelete->Controls->Add(newButton);
 		}
 	}
 
@@ -330,5 +369,9 @@ namespace MessengerGUI {
 	private: System::Void buttonShowGeneralChat_Click(System::Object^ sender, System::EventArgs^ e) {
 		ShowGeneralChat();
 	}
-	};
+	private: System::Void buttonDeleteUser_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		userDeleteFrom->Show();
+	}
+};
 }

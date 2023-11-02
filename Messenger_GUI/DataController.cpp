@@ -157,6 +157,10 @@ bool DataController::loadUser(MessangerUser user)
     //user.writingDataToFile(pathUsersData, data);
 }
 
+std::list<MessangerUser> DataController::selectAllUsers() {
+    return connectionDB.selectAllUsers();
+}
+
 // Выводит список пользователей с данными, тестировачная функция!
 void DataController::outUsers()
 {

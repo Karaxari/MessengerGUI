@@ -2,6 +2,7 @@
   MessengerGUI.LoginForm.resources - Embedded, ContainedInManifestFile, 
   MessengerGUI.MessengerForm.resources - Embedded, ContainedInManifestFile, 
   MessengerGUI.MessengerFormAdmin.resources - Embedded, ContainedInManifestFile, 
+  MessengerGUI.UserDelelteForm.resources - Embedded, ContainedInManifestFile, 
   MessengerGUI.UserListForm.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly Messenger_GUI, Version=0.0.*, Culture=Инвариантный язык (Инвариантная страна): 
@@ -51,6 +52,13 @@ Class MessengerGUI.ListPrivateChatsForm: AutoLayout, AnsiClass, Class, Public, B
     System.Windows.Forms.FlowLayoutPanel flowLayoutPrivateChat : Public
   Methods:
     ShowPrivateChatUsers(Object, EventArgs): PrivateScope, Public, HideBySig
+Class MessengerGUI.UserDelelteForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.FlowLayoutPanel flowLayoutUserDelete : Public
+  Methods:
+    DeleteUser(Object, EventArgs): PrivateScope, Public, HideBySig
 Class MessengerGUI.MessengerFormAdmin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(std.basic_string<char\,std::char_traits<char>\,std::allocator<char> >*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

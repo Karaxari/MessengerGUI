@@ -44,5 +44,6 @@ public:
     bool setSQL_SELECT(const wchar_t* sql);
     bool setSQL_INSERT(const wchar_t* sql);
     bool getStatus();
+    bool deleteUsers(std::string userLogin);
 };
 
